@@ -1,6 +1,4 @@
 package javagame;
-
-
 import javax.swing.*;
 
 public class Game extends JFrame {
@@ -15,6 +13,7 @@ public class Game extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
 
     public static void main(String [] args) {
 
