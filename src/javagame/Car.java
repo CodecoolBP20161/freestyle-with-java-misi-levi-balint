@@ -11,27 +11,40 @@ public class Car {
     private Image car;
     public int h;
     public int x;
+    public int y;
+    public int tick;
+    public double changeH;
+    public double changeX;
+    public double changeY;
 
-    public Car(int rnd){
+    public Car(){
+        changeY = 0.03353;
+        changeH = 0.03881;
+        changeX = 0.02;
+        tick = 0;
+        y = 163;
         h = 10;
-        // Random rnd = new Random();
-        lane = rnd;
-        switch (rnd){
+        ImageIcon carImage;
+        Random rnd = new Random();
+        lane = rnd.nextInt(3);
+        switch (lane){
             case 0:
                 pos = 17;
                 this.x = 487;
+                carImage = new ImageIcon("car_1.gif");
                 break;
             case 1:
                 pos = 50;
                 this.x = 500;
+                carImage = new ImageIcon("car_2.gif");
                 break;
-            case 2:
+            default:
                 pos = 82;
                 this.x = 513;
+                carImage = new ImageIcon("car_3.gif");
                 break;
         }
         z = 100;
-        ImageIcon carImage = new ImageIcon("car_3.gif");
         car = carImage.getImage();
     }
     public Image getCar(){
