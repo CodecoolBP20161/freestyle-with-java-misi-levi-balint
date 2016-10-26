@@ -10,19 +10,25 @@ public class Car {
     private int lane;
     private Image car;
     public int h;
+    public int x;
 
-    public Car(Road road){
+    public Car(int rnd){
         h = 10;
-        Random rnd = new Random();
-        lane = rnd.nextInt(3);
-        int a = (road.xpoints[1] - road.xpoints[0])/6;
-        switch (lane){
+        // Random rnd = new Random();
+        lane = rnd;
+        switch (rnd){
             case 0:
-                pos = a;
+                pos = 17;
+                this.x = 487;
+                break;
             case 1:
-                pos = a*3;
+                pos = 50;
+                this.x = 500;
+                break;
             case 2:
-                pos = a*5;
+                pos = 82;
+                this.x = 513;
+                break;
         }
         z = 100;
         ImageIcon carImage = new ImageIcon("car_3.gif");
@@ -34,5 +40,8 @@ public class Car {
     public void setCar(String filename){
         ImageIcon carImage = new ImageIcon(filename);
         car = carImage.getImage();
+    }
+    public int getPos(){
+        return this.pos;
     }
 }
