@@ -18,7 +18,6 @@ public class Screen extends JPanel implements ActionListener{
     Road road;
     Cabin cabin;
     List<Car> cars;
-    boolean anyad = true;
     ImageIcon bgr = new ImageIcon("bg.png");
     Image bg = bgr.getImage();
     Image exp;
@@ -43,9 +42,7 @@ public class Screen extends JPanel implements ActionListener{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (anyad){
-            drawBackground(g);
-        }
+        drawBackground(g);
 
         road = new Road(
                 new int[]{
